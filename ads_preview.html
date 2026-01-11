@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Anúncios Gabriel</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0F172A;
+            --accent: #D4AF37;
+            --white: #FFFFFF;
+            --font-ui: 'Inter', sans-serif;
+            --font-heading: 'Playfair Display', serif;
+        }
+
+        body {
+            background: #e2e8f0;
+            padding: 2rem;
+            font-family: var(--font-ui);
+        }
+
+        .ad-container {
+            margin-bottom: 2rem;
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            width: fit-content;
+        }
+
+        .ad-label {
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        /* Common Ad Styles */
+        .ad {
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Ad 1: Reality Check (Feed - 1080x1080) */
+        #ad1 {
+            width: 1080px;
+            height: 1080px;
+            background-image: url('./assets/hero.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .ad1-overlay {
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0));
+            padding: 3rem;
+            color: white;
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .ad1-title {
+            font-family: var(--font-heading);
+            font-size: 5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        .ad1-text {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            max-width: 80%;
+        }
+
+        .cta-btn {
+            background: var(--accent);
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            border-radius: 50px;
+            width: fit-content;
+            text-transform: uppercase;
+        }
+
+        /* Ad 2: Guardian Angel (Story - 1080x1920) */
+        #ad2 {
+            width: 1080px;
+            height: 1920px;
+            background: var(--primary);
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+        }
+
+        .ad2-top {
+            background-image: url('./assets/happy_senior_gardening.png');
+            /* Will be generated */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .ad2-bottom {
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .ad2-logo {
+            margin-bottom: 2rem;
+        }
+
+        .ad2-title {
+            font-family: var(--font-heading);
+            font-size: 5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .ad2-subtitle {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .ad2-product {
+            width: 400px;
+            height: 400px;
+            object-fit: contain;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
+        }
+
+        /* Ad 3: It's Jewelry (Feed - 1080x1080) */
+        #ad3 {
+            width: 1080px;
+            height: 1080px;
+            background: #F8FAFC;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 4rem;
+        }
+
+        .ad3-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .ad3-tag {
+            background: #EFF6FF;
+            color: var(--primary);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .ad3-title {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            color: var(--primary);
+        }
+
+        .ad3-image {
+            width: 100%;
+            height: 600px;
+            object-fit: contain;
+            margin: 2rem 0;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
+        }
+
+        .ad3-features {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .feature-pill {
+            border: 2px solid var(--primary);
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        /* Ad 4: Social Proof (Feed - 1080x1080) */
+        #ad4 {
+            width: 1080px;
+            height: 1080px;
+            background: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ad4-image {
+            width: 100%;
+            height: 65%;
+            background-image: url('https://placehold.co/1080x700/e2e8f0/475569?text=Foto+Senior+Cafe+Testimonial');
+            /* Will be generated */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .ad4-content {
+            height: 35%;
+            padding: 3rem;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .quote-mark {
+            font-family: var(--font-heading);
+            font-size: 8rem;
+            color: var(--accent);
+            line-height: 0;
+            margin-right: 2rem;
+            transform: translateY(2rem);
+        }
+
+        .quote-text {
+            font-size: 1.7rem;
+            font-style: italic;
+        }
+
+        .quote-author {
+            margin-top: 1rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+            font-size: 1.2rem;
+            font-style: normal;
+        }
+
+        /* Ad 5: Direct Offer (Display - 1200x628 - Generic Size) */
+        #ad5 {
+            width: 1200px;
+            height: 628px;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 4rem;
+        }
+
+        .ad5-left {
+            color: white;
+            max-width: 60%;
+        }
+
+        .ad5-title {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .ad5-price-block {
+            background: var(--accent);
+            color: var(--primary);
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .ad5-price-large {
+            font-size: 4rem;
+            font-weight: 800;
+        }
+
+        .ad5-price-sub {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .ad5-right {
+            width: 40%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ad5-img {
+            max-width: 100%;
+            max-height: 100%;
+            filter: drop-shadow(0 0 40px rgba(212, 175, 55, 0.3));
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="ad-container">
+        <div class="ad-label">Ad 1: Facebook/Insta Feed - Reality Check</div>
+        <div id="ad1" class="ad">
+            <div class="ad1-overlay">
+                <div class="ad1-title">E se ninguém ouvir?</div>
+                <div class="ad1-text">A queda é silenciosa. O socorro não. Garanta a segurança de quem você ama com o
+                    Gabriel.</div>
+                <div class="cta-btn">Saiba Mais</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ad-container">
+        <div class="ad-label">Ad 2: Stories - Guardian Angel</div>
+        <div id="ad2" class="ad">
+            <div class="ad2-top">
+                <!-- Placeholder for Happy Senior -->
+                <div
+                    style="width: 100%; height: 100%; background: url('https://placehold.co/1080x960/e2e8f0/475569?text=Foto+Senior+Feliz+(Jardinagem)') center/cover;">
+                </div>
+                <div class="ad1-overlay"
+                    style="background: linear-gradient(to top, rgba(15, 23, 42, 1), transparent); height: 20%; bottom: 0; position: absolute; width: 100%;">
+                </div>
+            </div>
+            <div class="ad2-bottom">
+                <div class="ad2-logo">
+                    <!-- Wing Icon White -->
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" class="brand-logo" stroke="#D4AF37"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 21c0-3-3-8-8-8 0-4.5 3.5-8 8-8s8 3.5 8 8c-5 0-8 5-8 8z" opacity="0.5" />
+                        <path d="M7 13c0-4 4-8 4-8" />
+                        <path d="M17 13c0-4-4-8-4-8" />
+                        <path d="M5 13c1-2 4-5 7-5 3 0 6 3 7 5" />
+                    </svg>
+                </div>
+                <h2 class="ad2-title">Gabriel</h2>
+                <p class="ad2-subtitle">Seu Anjo da Guarda Digital</p>
+                <img src="./assets/pendant.png" class="ad2-product" alt="Pingente">
+                <div class="cta-btn">Peça Agora</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ad-container">
+        <div class="ad-label">Ad 3: Carousel - "It's Jewelry"</div>
+        <div id="ad3" class="ad">
+            <div class="ad3-header">
+                <span class="ad3-tag">Lançamento</span>
+                <h2 class="ad3-title">Proteção que combina com tudo.</h2>
+            </div>
+            <img src="./assets/pendant.png" class="ad3-image" alt="Pingente Gabriel">
+            <div class="ad3-features">
+                <div class="feature-pill">À prova d'água</div>
+                <div class="feature-pill">Design Premium</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ad-container">
+        <div class="ad-label">Ad 4: Feed - Social Proof</div>
+        <div id="ad4" class="ad">
+            <div class="ad4-image"></div>
+            <div class="ad4-content">
+                <div class="quote-mark">“</div>
+                <div class="quote-text">
+                    "Eu não queria usar um botão de emergência 'velho'. Mas o Gabriel é diferente. É moderno, discreto e
+                    me sinto seguro."
+                    <span class="quote-author">- Sr. Antônio, 72 anos</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ad-container">
+        <div class="ad-label">Ad 5: Display - Direct Offer</div>
+        <div id="ad5" class="ad">
+            <div class="ad5-left">
+                <h2 class="ad5-title">Proteção Completa 24h</h2>
+                <div class="ad5-price-block">
+                    <span class="ad5-price-large">R$ 150</span>
+                    <span class="ad5-price-sub">/mês</span>
+                </div>
+                <div class="feature-pill" style="border-color: white; color: white;">+ Equipamento Incluso</div>
+            </div>
+            <div class="ad5-right">
+                <img src="./assets/pendant.png" class="ad5-img" alt="Gabriel">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
