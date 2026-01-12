@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gabriel | Seu Anjo da Guarda</title>
+  <!-- Fonts: Inter for UI, Playfair Display for Headings (Premium feel) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./src/style.css">
+</head>
+
+<body>
+  <!-- Top Navigation / Logo -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="brand">
+        <!-- New Premium Angel Logo -->
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" class="brand-logo" stroke="var(--accent-color)"
+          stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 21s-6-4.5-6-10c0-3.5 2.5-6 6-6 3.5 0 6 2.5 6 6 0 5.5-6 10-6 10z"
+            fill="rgba(212, 175, 55, 0.1)" /> <!-- Halo/Shield Base -->
+          <path d="M5 10c0-3 2.5-5 5-5 1.5 0 3 .5 3 2" /> <!-- Left Wing Top -->
+          <path d="M19 10c0-3-2.5-5-5-5-1.5 0-3 .5-3 2" /> <!-- Right Wing Top -->
+          <path d="M5 10c-2 2-2 5 0 7" /> <!-- Left Wing Bot -->
+          <path d="M19 10c2 2 2 5 0 7" /> <!-- Right Wing Bot -->
+          <path d="M12 7v6" /> <!-- Center Line -->
+          <path d="M9 13l3 3 3-3" /> <!-- Arrow/Protection -->
+        </svg>
+        <div class="brand-text">
+          Gabriel
+          <span class="brand-tagline">Seu Anjo</span>
+        </div>
+      </div>
+      <a href="#contato" class="nav-cta">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.82L4.39 19.65L5.23 16.55L5.04 16.25C4.2 14.96 3.75 13.45 3.75 11.91C3.75 7.37 7.47 3.67 12.05 3.67Z" />
+        </svg>
+        Falar no WhatsApp
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="badge">Seu Anjo da Guarda Digital</span>
+        <h1 class="hero-title">Independência para eles.<br>Tranquilidade para você.</h1>
+        <p class="hero-subtitle">
+          Em caso de queda ou mal-estar, um simples toque conecta seus entes queridos à nossa central. A proteção de um
+          anjo da guarda, 24h por dia.
+        </p>
+
+        <!-- Lead Gen Form -->
+        <form class="hero-form" id="hero-form">
+          <h3>Comece a proteger hoje</h3>
+          <div class="form-group">
+            <label for="name">Seu Nome</label>
+            <input type="text" id="name" placeholder="Ex: Maria Silva" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Seu WhatsApp</label>
+            <input type="tel" id="phone" placeholder="(11) 99999-9999" required>
+          </div>
+          <div class="form-group">
+            <label for="relation">Para quem é o dispositivo?</label>
+            <select id="relation">
+              <option value="parents">Para meus pais/avós</option>
+              <option value="self">Para mim mesmo</option>
+              <option value="other">Outro</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-primary">
+            Solicitar Contato do Anjo
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="icon">
+              <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+          <p class="form-footer"><small>Seus dados estão seguros. Entraremos em contato via WhatsApp.</small></p>
+        </form>
+      </div>
+
+      <div class="hero-image-wrapper">
+        <img src="./assets/hero.jpg" alt="Senhora idosa em momento de necessidade" class="placeholder-image"
+          style="object-fit: cover; object-position: top;">
+        <div class="trust-badge">
+          <span class="trust-number">30seg</span>
+          <span class="trust-label">Tempo médio de resposta</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- How It Works -->
+  <section class="process section-padding">
+    <div class="container">
+      <div class="section-header">
+        <h2>Como funciona o Gabriel?</h2>
+        <p>Simples, rápido e eficaz. Desenhado para momentos de tensão.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <img src="./assets/step1_user.jpg" alt="Idosa acionando o botão de emergência" class="step-image">
+          <h3>Chamado</h3>
+          <p>Ao se sentir mal ou sofrer uma queda, o usuário pressiona o botão de emergência no pingente ou pulseira.
+          </p>
+        </div>
+        <div class="step-card">
+          <img src="./assets/step2_user.png" alt="Central de monitoramento atendendo chamada" class="step-image">
+          <h3>Atendimento Imediato</h3>
+          <p>Em segundos, o anjo da guarda (nossa central) identifica o chamado e entra em contato pelo viva-voz.</p>
+        </div>
+        <div class="step-card">
+          <img src="./assets/step3_user.jpg" alt="Ambulância chegando para socorro" class="step-image">
+          <h3>Ajuda</h3>
+          <p>Avisamos os familiares imediatamente e enviamos o socorro médico especializado (ambulância) se necessário.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Showcase -->
+  <section class="products section-padding bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2>Segurança com Elegância</h2>
+        <p>Dispositivos discretos que parecem joias. Porque seu anjo da guarda também pode ser elegante.</p>
+      </div>
+
+      <div class="products-grid">
+        <!-- Pendant -->
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="./assets/pendant.png" alt="Pingente de emergência elegante"
+              style="width:100%; height: 300px; object-fit: contain;">
+          </div>
+          <div class="product-info">
+            <h3>O Pingente</h3>
+            <p>Acabamento em ouro e branco. Parece uma joia clássica. Leve, à prova d'água e com bateria de longa
+              duração.</p>
+          </div>
+        </div>
+
+        <!-- Bracelet -->
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="./assets/bracelet.png" alt="Pulseira de emergência moderna"
+              style="width:100%; height: 300px; object-fit: contain;">
+          </div>
+          <div class="product-info">
+            <h3>A Pulseira</h3>
+            <p>Design moderno e confortável. Pulseira de silicone macio, ideal para uso contínuo, inclusive no banho.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transparent Pricing -->
+  <section class="pricing section-padding">
+    <div class="container">
+      <div class="pricing-wrapper">
+        <div class="pricing-content">
+          <h2>Transparência Total</h2>
+          <p>Sabemos que o mercado cobra taxas escondidas. O Gabriel é diferente: simples e honesto.</p>
+          <ul class="benefits-list">
+            <li>Sem fidelidade ou multa de cancelamento</li>
+            <li>Instalação simples (plug & play)</li>
+            <li>Atendimento humanizado 24h</li>
+          </ul>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Plano Proteção Completa</h3>
+            <p class="pricing-sub">Tudo incluso</p>
+          </div>
+          <div class="price-row">
+            <span class="currency">R$</span>
+            <span class="amount">150</span>
+            <span class="period">/mês</span>
+          </div>
+          <div class="setup-fee">
+            + R$ 299 taxa única de adesão (equipamento)
+          </div>
+          <a href="#contato" class="btn-whatsapp btn-primary full-width">Quero Meu Anjo Agora</a>
+          <p class="guarantee">Garantia de 7 dias ou seu dinheiro de volta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer / Final CTA -->
+  <footer class="footer bg-dark" id="contato">
+    <div class="container footer-content">
+      <div class="footer-cta">
+        <h2>Ficou com alguma dúvida?</h2>
+        <p>Nossos anjos estão prontos para te explicar tudo pelo WhatsApp.</p>
+        <a href="#" id="whatsapp-float" class="btn-whatsapp">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.82L4.39 19.65L5.23 16.55L5.04 16.25C4.2 14.96 3.75 13.45 3.75 11.91C3.75 7.37 7.47 3.67 12.05 3.67Z" />
+          </svg>
+          Conversar no WhatsApp
+        </a>
+      </div>
+      <div class="footer-links">
+        <p>&copy; 2024 Gabriel. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+
+</html>
